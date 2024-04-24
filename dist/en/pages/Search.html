@@ -9,13 +9,86 @@
     <script src="../js/home.js" async="async" defer="defer"></script>
     <script src="../js/search.js" async="async" defer="defer"></script>
   </head>
-  <body>
-    <header class="h-[50px] shadow-gray-300 sm:px-4 px-1 flex items-center justify-between gap-2 py-1 bg-gray-50 shadow-sm">
-      <h2 class="text-gray-800 text-lg"><b>Booking</b></h2>
-      <nva class="relative flex items-center justify-center w-full max-w-[700px] h-full">
-        <input class="w-full h-[30px] sm:h-[80%] outline outline-1 outline-gray-300 focus:outline-gray-800 border-0 rounded-[4px] px-4 ps-8 text-sm transition-all" id="search" type="search"/><i class="fa-solid fa-magnifying-glass absolute left-3 text-sm"></i>
-      </nva>
-      <button class="py-[4px] transition-all hover:opacity-85 px-3 sm:px-5 sm:text-sm bg-black rounded-full text-white">Login</button>
+  <body class="bg-[#00111C]">
+    <header class="h-[50px] sm:px-4 px-1 bg-[#EDC531] py-1">
+      <div class="lg:container mx-auto flex items-center justify-between gap-2 h-full">
+        <h2 class="text-gray-800 text-lg"><b><a href="/dist/en/pages/Home.html">Booking</a></b></h2>
+        <button class="py-[4px] transition-all hover:opacity-85 px-3 sm:px-5 sm:text-sm bg-zinc-900 rounded-full text-white">Login</button>
+      </div>
     </header>
+    <div class="h-[400px] md:h-32 text-white shadow-2xl shadow-[#001A2C] bg-black w-full py-5">
+      <form class="lg:container mx-auto flex items-center md:items-start justify-between flex-col md:flex-row gap-2 h-full">
+        <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
+          <h3 class="text-[#DBB42C]">Hotel Name</h3>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Hotel Name"/>
+        </div>
+        <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
+          <h3 class="text-[#DBB42C]">Room Type</h3>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Room Type"/>
+        </div>
+        <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
+          <h3 class="text-[#DBB42C]">Hotel Position</h3>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Hotel Position"/>
+        </div>
+        <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
+          <h3 class="text-[#DBB42C]">Hotel Rate</h3>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="number" placeholder="Hotel Rate"/>
+        </div>
+        <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12"><br class="hidden md:block"/>
+          <button class="bg-[#DBB42C] px-2 text-zinc-800 w-full h-full rounded-[2px] transition-all hover:text-white my-2">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="w-full mt-20"></div>
+    <div class="lg:container mx-auto flex items-start flex-col md:flex-row gap-10 md:gap-4 w-full text-white">
+      <div class="outline outline-1 outline-zinc-900 w-full overflow-hidden rounded-[4px]"><img class="h-96 w-full object-fit-cover object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
+        <div class="px-2">
+          <h1 class="text-3xl mt-5">Premium - Family / Standard</h1>
+          <div class="flex gap-1 mt-1 text-xl">
+            <h1 class="line-through text-zinc-400">200$</h1>
+            <h1 class="text-zinc-200">159$ For Night</h1>
+          </div>
+        </div>
+        <button class="w-full bg-yellow-700 h-12 mt-10 text-zinc-900 text-lg transition-all hover:text-white">Check In</button>
+      </div>
+      <div class="flex items-center flex-col gap-6 w-full">
+        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
+          <div>
+            <h1 class="text-lg">Premium - Family / Standard</h1>
+            <div class="flex gap-1 mt-1"> 
+              <h1 class="line-through text-zinc-400">200$</h1>
+              <h1 class="text-zinc-200">159$ For Night</h1>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
+          <div>
+            <h1 class="text-lg">Premium - Family / Standard</h1>
+            <div class="flex gap-1 mt-1"> 
+              <h1 class="line-through text-zinc-400">200$</h1>
+              <h1 class="text-zinc-200">159$ For Night</h1>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
+          <div>
+            <h1 class="text-lg">Premium - Family / Standard</h1>
+            <div class="flex gap-1 mt-1"> 
+              <h1 class="line-through text-zinc-400">200$</h1>
+              <h1 class="text-zinc-200">159$ For Night</h1>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
+          <div>
+            <h1 class="text-lg">Premium - Family / Standard</h1>
+            <div class="flex gap-1 mt-1"> 
+              <h1 class="line-through text-zinc-400">200$</h1>
+              <h1 class="text-zinc-200">159$ For Night</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

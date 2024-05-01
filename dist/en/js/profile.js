@@ -1,6 +1,3 @@
-if (
-  !localStorage.getItem("token")?.length &&
-  location.pathname == "/dist/en/pages/Profile.html"
-) {
+if (!document.cookie.length) {
   location.pathname = "/dist/en/pages/Home.html";
 }

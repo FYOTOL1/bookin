@@ -2,11 +2,35 @@
 <header class="h-[50px] shadow-gray-300 sm:px-4 px-1 bg-[#EDC531] py-1 shadow-sm">
   <div class="lg:container mx-auto flex items-center justify-between gap-2 h-full">
     <h2 class="text-gray-800 text-lg"><b><a href="/dist/en/pages/Home.html">Booking</a></b></h2>
-    <button class="py-[4px] transition-all hover:opacity-85 px-3 sm:px-5 sm:text-sm bg-zinc-900 rounded-full text-white" id="profile"><a href="/dist/en/pages/Profile.html">Profile</a></button>
-    <div class="hidden items-center justify-center absolute top-0 bottom-0 left-0 right-0 z-30" id="loginPopup">
+    <button class="hidden relative" id="HeaderList"><img class="w-9 h-9 rounded-full outline outline-3 outline-zinc-700 transition-all hover:outline-[#EDC531]" id="avatar" alt="Error"/></button>
+    <div class="absolute top-[50px] right-1 sm:right-4 hidden flex-col justify-evenly gap-3 bg-gray-600 w-32 h-28 px-3 py-4 z-10 text-[#fad643] text-lg" id="List"><a class="cursor-pointer transition-all hover:text-white" href="/dist/en/pages/Profile.html">Profile</a>
+      <hr/>
+      <button class="cursor-pointer transition-all hover:text-white text-left" onclick="Logout()">Logout</button>
+    </div>
+    <button class="bg-zinc-700 text-white w-20 h-7 rounded-full" id="profile">Login</button>
+    <div class="hidden items-center justify-center absolute top-0 bottom-0 left-0 right-0  z-30" id="loginPopup">
       <div class="absolute h-full w-full bg-black opacity-50"></div>
-      <div class="flex flex-col gap-2 w-full max-w-96 h-[60px] z-50 p-2">
-        <div class="flex items-center justify-center w-full h-full bg-blue-500 px-3 rounded-[4px] cursor-pointer transition-all hover:bg-blue-400" id="googleAuth"><i class="fa-brands fa-google text-2xl text-white"></i></div>
+      <div class="flex flex-col gap-2 w-full max-w-96 z-50 p-2 bg-zinc-700" id="auth-cont">
+        <div class="flex items-center justify-center w-full h-full bg-blue-500 px-3 py-2 rounded-[4px] cursor-pointer transition-all hover:bg-blue-400" id="googleAuth"><i class="fa-brands fa-google text-2xl text-white"></i></div>
+        <form class="hidden flex-col gap-3" id="signup-form">
+          <div>
+            <label class="text-[#fad643] text-xs" for="visa-card">Visa Card</label>
+            <input class="w-full h-7 bg-transparent outline outline-1 outline-[#fad643] border-none mt-1 text-white px-2 text-sm rounded-[2px]" id="visa-card" name="visa-card" type="number" required="required"/>
+          </div>
+          <div>
+            <label class="text-[#fad643] text-xs" for="phone-number">Phone Number</label>
+            <input class="w-full h-7 bg-transparent outline outline-1 outline-[#fad643] border-none mt-1 text-white px-2 text-sm rounded-[2px]" id="phone-number" name="phone-number" type="number" required="required"/>
+          </div>
+          <div>
+            <label class="text-[#fad643] text-xs" for="country">Country</label>
+            <input class="w-full h-7 bg-transparent outline outline-1 outline-[#fad643] border-none mt-1 text-white px-2 text-sm rounded-[2px]" id="country" name="country" type="text" required="required"/>
+          </div>
+          <div>
+            <label class="text-[#fad643] text-xs" for="age">Age</label>
+            <input class="w-full h-7 bg-transparent outline outline-1 outline-[#fad643] border-none mt-1 text-white px-2 text-sm rounded-[2px]" id="age" name="age" type="text" required="required"/>
+          </div>
+          <button class="bg-[#fad643] text-zinc-700 font-semibold w-full h-9 transition-all hover:text-white rounded-sm" type="submit">Submit</button>
+        </form>
       </div>
     </div>
   </div>

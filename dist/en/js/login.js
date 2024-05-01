@@ -22,14 +22,20 @@ const provider = new GoogleAuthProvider();
 const analytics = getAnalytics(app);
 
 const googleLoginBtn = document.getElementById("googleAuth");
+const signupForm = document.getElementById("signup-form");
+let photo = "";
 
 googleLoginBtn.addEventListener("click", () => {
   signInWithPopup(auth, provider)
     .then((res) => {
       const credential = GoogleAuthProvider.credentialFromResult(res);
       const user = res.user;
-      StorageUser(user.displayName, user.photoURL, credential.accessToken);
-      window.location.reload();
+      StorageUser(user.email);
+      googleLoginBtn.classList.remove("flex");
+      googleLoginBtn.classList.add("hidden");
+      signupForm.classList.remove("hidden");
+      signupForm.classList.add("flex");
+      photo = user.photoURL;
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -37,8 +43,29 @@ googleLoginBtn.addEventListener("click", () => {
     });
 });
 
-function StorageUser(username, avatar, token) {
-  localStorage.setItem("username", username);
-  localStorage.setItem("avatar", avatar);
-  localStorage.setItem("token", token);
+signupForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(signupForm);
+  const visa_card = formData.getAll("visa-card");
+  const phone_number = formData.getAll("phone-number");
+  const country = formData.getAll("country");
+  const age = formData.getAll("age");
+  SaveCookie({ visa_card, phone_number, country, age, photo });
+});
+
+function SaveCookie(data) {
+  const Data = JSON.stringify(data);
+  const date = new Date();
+  date.setTime(date.getTime() + 1000 * 60 * 60 * 24 * 365);
+  document.cookie = "data=" + Data + "; path='/'; expires=" + date + ";";
+  location.reload();
+}
+
+function StorageUser(data) {
+  let emails = localStorage.getItem("emails")
+    ? JSON.parse(localStorage.getItem("emails"))
+    : [];
+  emails = emails.concat(data);
+  const jsonData = JSON.stringify(emails);
+  localStorage.setItem("emails", jsonData);
 }

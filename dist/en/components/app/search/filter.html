@@ -1,21 +1,21 @@
 
 <div class="h-[400px] md:h-32 text-white shadow-2xl shadow-[#001A2C] bg-black w-full py-5">
-  <form class="lg:container mx-auto flex items-center md:items-start justify-between flex-col md:flex-row gap-2 h-full">
+  <form class="lg:container mx-auto flex items-center md:items-start justify-between flex-col md:flex-row gap-2 h-full" id="search">
     <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
       <h3 class="text-[#DBB42C]">Hotel Name</h3>
-      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Hotel Name"/>
+      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" name="name" required="required" placeholder="Hotel Name"/>
     </div>
     <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
-      <h3 class="text-[#DBB42C]">Room Type</h3>
-      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Room Type"/>
+      <h3 class="text-[#DBB42C]">Room Price</h3>
+      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" name="price" required="required" placeholder="Room Price"/>
     </div>
     <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
-      <h3 class="text-[#DBB42C]">Hotel Position</h3>
-      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Hotel Position"/>
+      <h3 class="text-[#DBB42C]">Hotel Type</h3>
+      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" name="type" required="required" placeholder="Hotel Type"/>
     </div>
     <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
       <h3 class="text-[#DBB42C]">Hotel Rate</h3>
-      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="number" placeholder="Hotel Rate"/>
+      <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="float" name="rate" required="required" placeholder="Hotel Rate"/>
     </div>
     <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12"><br class="hidden md:block"/>
       <button class="bg-[#DBB42C] px-2 text-zinc-800 w-full h-full rounded-[2px] transition-all hover:text-white my-2">Search</button>

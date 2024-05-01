@@ -1,38 +1,44 @@
 <!DOCTYPE html >
 <html>
   <head>
-    <title>Booking </title>
+    <title>BOOKING </title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="../style/output.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <script src="../js/home.js" async="async" defer="defer"></script>
-    <script src="../js/search.js" async="async" defer="defer"></script>
+    <script src="../js/login.js" type="module" defer="defer"></script>
+    <script src="../js/header.js" defer="defer"></script>
   </head>
   <body class="bg-[#00111C]">
-    <header class="h-[50px] sm:px-4 px-1 bg-[#EDC531] py-1">
+    <header class="h-[50px] shadow-gray-300 sm:px-4 px-1 bg-[#EDC531] py-1 shadow-sm">
       <div class="lg:container mx-auto flex items-center justify-between gap-2 h-full">
         <h2 class="text-gray-800 text-lg"><b><a href="/dist/en/pages/Home.html">Booking</a></b></h2>
-        <button class="py-[4px] transition-all hover:opacity-85 px-3 sm:px-5 sm:text-sm bg-zinc-900 rounded-full text-white">Login</button>
+        <button class="py-[4px] transition-all hover:opacity-85 px-3 sm:px-5 sm:text-sm bg-zinc-900 rounded-full text-white" id="profile"><a href="/dist/en/pages/Profile.html">Profile</a></button>
+        <div class="hidden items-center justify-center absolute top-0 bottom-0 left-0 right-0 z-30" id="loginPopup">
+          <div class="absolute h-full w-full bg-black opacity-50"></div>
+          <div class="flex flex-col gap-2 w-full max-w-96 h-[60px] z-50 p-2">
+            <div class="flex items-center justify-center w-full h-full bg-blue-500 px-3 rounded-[4px] cursor-pointer transition-all hover:bg-blue-400" id="googleAuth"><i class="fa-brands fa-google text-2xl text-white"></i></div>
+          </div>
+        </div>
       </div>
     </header>
     <div class="h-[400px] md:h-32 text-white shadow-2xl shadow-[#001A2C] bg-black w-full py-5">
-      <form class="lg:container mx-auto flex items-center md:items-start justify-between flex-col md:flex-row gap-2 h-full">
+      <form class="lg:container mx-auto flex items-center md:items-start justify-between flex-col md:flex-row gap-2 h-full" id="search">
         <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
           <h3 class="text-[#DBB42C]">Hotel Name</h3>
-          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Hotel Name"/>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" name="name" required="required" placeholder="Hotel Name"/>
         </div>
         <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
-          <h3 class="text-[#DBB42C]">Room Type</h3>
-          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Room Type"/>
+          <h3 class="text-[#DBB42C]">Room Price</h3>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" name="price" required="required" placeholder="Room Price"/>
         </div>
         <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
-          <h3 class="text-[#DBB42C]">Hotel Position</h3>
-          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" placeholder="Hotel Position"/>
+          <h3 class="text-[#DBB42C]">Hotel Type</h3>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="text" name="type" required="required" placeholder="Hotel Type"/>
         </div>
         <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12">
           <h3 class="text-[#DBB42C]">Hotel Rate</h3>
-          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="number" placeholder="Hotel Rate"/>
+          <input class="bg-black w-full h-full outline outline-1 outline-[#B69121] px-2 text-[#FFE169] my-2" type="float" name="rate" required="required" placeholder="Hotel Rate"/>
         </div>
         <div class="w-2/3 md:w-1/5 text-base md:text-sm lg:text-lg   h-10 lg:h-12"><br class="hidden md:block"/>
           <button class="bg-[#DBB42C] px-2 text-zinc-800 w-full h-full rounded-[2px] transition-all hover:text-white my-2">Search</button>
@@ -41,54 +47,19 @@
     </div>
     <div class="w-full mt-20"></div>
     <div class="lg:container mx-auto flex items-start flex-col md:flex-row gap-10 md:gap-4 w-full text-white">
-      <div class="outline outline-1 outline-zinc-900 w-full overflow-hidden rounded-[4px]"><img class="h-96 w-full object-fit-cover object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
+      <div class="outline outline-1 outline-gray-800 w-full overflow-hidden rounded-[4px]" id="details"><img class="h-96 w-full object-fit-cover object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
         <div class="px-2">
           <h1 class="text-3xl mt-5">Premium - Family / Standard</h1>
           <div class="flex gap-1 mt-1 text-xl">
             <h1 class="line-through text-zinc-400">200$</h1>
             <h1 class="text-zinc-200">159$ For Night</h1>
+            <h1 class="text-zinc-200">Rate: <p class="text-yellow-500"> 4.5 </p></h1>
           </div>
         </div>
-        <button class="w-full bg-yellow-700 h-12 mt-10 text-zinc-900 text-lg transition-all hover:text-white">Check In</button>
+        <button class="w-full bg-yellow-700 h-12 mt-10 text-zinc-900 text-lg transition-all hover:text-white">Check In  </button>
       </div>
-      <div class="flex items-center flex-col gap-6 w-full">
-        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
-          <div>
-            <h1 class="text-lg">Premium - Family / Standard</h1>
-            <div class="flex gap-1 mt-1"> 
-              <h1 class="line-through text-zinc-400">200$</h1>
-              <h1 class="text-zinc-200">159$ For Night</h1>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
-          <div>
-            <h1 class="text-lg">Premium - Family / Standard</h1>
-            <div class="flex gap-1 mt-1"> 
-              <h1 class="line-through text-zinc-400">200$</h1>
-              <h1 class="text-zinc-200">159$ For Night</h1>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
-          <div>
-            <h1 class="text-lg">Premium - Family / Standard</h1>
-            <div class="flex gap-1 mt-1"> 
-              <h1 class="line-through text-zinc-400">200$</h1>
-              <h1 class="text-zinc-200">159$ For Night</h1>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-5 outline outline-1 outline-zinc-700 w-full h-28 overflow-hidden rounded-[4px]"><img class="h-28 w-32 object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
-          <div>
-            <h1 class="text-lg">Premium - Family / Standard</h1>
-            <div class="flex gap-1 mt-1"> 
-              <h1 class="line-through text-zinc-400">200$</h1>
-              <h1 class="text-zinc-200">159$ For Night</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="flex items-center flex-col gap-6 w-full" id="hotels-cont"></div>
     </div>
+    <script src="../js/search.js" defer="defer"></script>
   </body>
 </html>

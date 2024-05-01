@@ -1,0 +1,69 @@
+
+<html>
+  <head>
+    <title>BOOKING </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../style/output.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="../js/login.js" type="module" defer="defer"></script>
+    <script src="../js/header.js" defer="defer"></script>
+  </head>
+  <body>
+    <header class="h-[50px] shadow-gray-300 sm:px-4 px-1 bg-[#EDC531] py-1 shadow-sm">
+      <div class="lg:container mx-auto flex items-center justify-between gap-2 h-full">
+        <h2 class="text-gray-800 text-lg"><b><a href="/dist/en/pages/Home.html">Booking</a></b></h2>
+        <button class="py-[4px] transition-all hover:opacity-85 px-3 sm:px-5 sm:text-sm bg-zinc-900 rounded-full text-white" id="profile"><a href="/dist/en/pages/Profile.html">Profile</a></button>
+        <div class="hidden items-center justify-center absolute top-0 bottom-0 left-0 right-0 z-30" id="loginPopup">
+          <div class="absolute h-full w-full bg-black opacity-50"></div>
+          <div class="flex flex-col gap-2 w-full max-w-96 h-[60px] z-50 p-2">
+            <div class="flex items-center justify-center w-full h-full bg-blue-500 px-3 rounded-[4px] cursor-pointer transition-all hover:bg-blue-400" id="googleAuth"><i class="fa-brands fa-google text-2xl text-white"></i></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="relative h-screen max-h-[600px] overflow-hidden capitalize bg-zinc-700 w-full bg gray-50"><img class="bigScreen absolute top-[50%] translate-y-[-50%] object-cover dark-img h-full w-full" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/253dc125021039.5633dfd970c94.jpg" alt="Error"/>
+      <div class="lg:container mx-auto text-center flex items-center justify-center flex-col px-2 lg:px-0 sm:gap-5 w-full absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
+        <h1 class="text-2xl sm:text-4xl md:text-6xl text-[#FAD643] [letter-spacing:8px] font-bold">Profile</h1>
+      </div>
+    </div>
+    <div class="bg-black py-10">
+      <div class="lg:container mx-auto">
+        <form>
+          <div class="gap-5 md:gap-10 flex-col sm:flex-row flex items-center w-full">
+            <div class="text-[#EDC531] w-full max-w-96 flex flex-col gap-2 text-lg">
+              <label class="capitalize text-[17px]" for="fName">first name</label>
+              <input class="outline outline-1 outline-[#EDC531] bg-black py-1 px-2" id="fName" type="text" required="required"/>
+            </div>
+            <div class="text-[#EDC531] w-full max-w-96 flex flex-col gap-2 text-lg">
+              <label class="capitalize text-[17px]" for="lName">last name</label>
+              <input class="outline outline-1 outline-[#EDC531] bg-black py-1 px-2" id="lName" type="text" required="required"/>
+            </div>
+          </div>
+          <div class="gap-5 md:gap-10 flex-col sm:flex-row flex items-center w-full mt-10">
+            <div class="text-[#EDC531] w-full max-w-96 flex flex-col gap-2 text-lg">
+              <label class="capitalize text-[17px]" for="country">country</label>
+              <input class="outline outline-1 outline-[#EDC531] bg-black py-1 px-2 w-40" id="country" type="text" required="required"/>
+            </div>
+            <div class="text-[#EDC531] w-full max-w-96 flex flex-col gap-2 text-lg">
+              <label class="capitalize text-[17px]" for="age">age</label>
+              <input class="outline outline-1 outline-[#EDC531] bg-black py-1 px-2 w-12" id="age" type="text" maxlength="2" required="required"/>
+            </div>
+          </div>
+          <div class="gap-5 md:gap-10 flex-col sm:flex-row flex items-center w-full mt-10">
+            <div class="text-[#EDC531] w-full max-w-96 flex flex-col gap-2 text-lg">
+              <label class="capitalize text-[17px]" for="email">email</label>
+              <input class="outline outline-1 outline-[#EDC531] bg-black py-1 px-2" id="email" type="email" required="required"/>
+            </div>
+            <div class="text-[#EDC531] w-full max-w-96 flex flex-col gap-2 text-lg">
+              <label class="capitalize text-[17px]" for="password">password</label>
+              <input class="outline outline-1 outline-[#EDC531] bg-black py-1 px-2" id="password" type="password" required="required"/>
+            </div>
+          </div>
+          <button class="block ms-auto bg-[#DBB42C] px-2 text-zinc-800 w-full sm:w-52 h-10 mt-10 sm:mt-5 rounded-[2px] transition-all hover:text-white my-2">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="../js/profile.js" defer="defer"></script>
+  </body>
+</html>

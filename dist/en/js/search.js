@@ -109,7 +109,13 @@ function RenderDetails() {
   `;
 
   const checkInButton = document.getElementById("checkIn");
-  checkInButton.addEventListener("click", () => CheckIn());
+  checkInButton.addEventListener("click", () => {
+    if (document.cookie) {
+      CheckIn();
+    } else {
+      alert("Please Login First or Need To Have A Visa Card");
+    }
+  });
 }
 
 function CheckIn() {
@@ -123,9 +129,20 @@ function CheckIn() {
     }
     reservations.push(detailsHotel);
     localStorage.setItem("reservations", JSON.stringify(reservations));
+    alert("done successfully");
   } else {
     const reservations = [];
     reservations.push(detailsHotel);
     localStorage.setItem("reservations", JSON.stringify(reservations));
+    alert("done successfully");
   }
+}
+
+function GetCookie(name) {
+  const cookieArray = document.cookie.split(";").map((cookie) => cookie.trim());
+  const dataCookie = cookieArray.find((cookie) => cookie.startsWith("data="));
+  const dataString = dataCookie.substring(5);
+
+  const jsonData = JSON.parse(decodeURIComponent(dataString));
+  return jsonData[`${name}`];
 }

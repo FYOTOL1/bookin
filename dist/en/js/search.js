@@ -2,7 +2,6 @@ const searchForm = document.getElementById("search");
 const hotels_cont = document.getElementById("hotels-cont");
 const details = document.getElementById("details");
 const hotel_card = document.getElementById("hotel_card");
-const checkIn = document.getElementById("checkIn");
 
 let data = [];
 let filter = [];
@@ -41,10 +40,6 @@ searchForm.addEventListener("submit", (e) => {
   const price = formData.getAll("price");
   const rate = formData.getAll("rate");
   GetHotel(name, type, price, rate);
-});
-
-checkIn.addEventListener("click", () => {
-  alert("14");
 });
 
 function HotelFocus(d) {
@@ -112,4 +107,25 @@ function RenderDetails() {
 </div>
 <button id='checkIn' class="w-full bg-yellow-700 h-12 mt-10 text-zinc-900 text-lg transition-all hover:text-white">Check In</button>
   `;
+
+  const checkInButton = document.getElementById("checkIn");
+  checkInButton.addEventListener("click", () => CheckIn());
+}
+
+function CheckIn() {
+  const getReservations = localStorage.getItem("reservations");
+  if (getReservations) {
+    const reservations = JSON.parse(getReservations);
+    const checkIsset = reservations.filter((f) => f.id == detailsHotel.id);
+    if (checkIsset.length) {
+      alert("You Already Have This Reservation");
+      return;
+    }
+    reservations.push(detailsHotel);
+    localStorage.setItem("reservations", JSON.stringify(reservations));
+  } else {
+    const reservations = [];
+    reservations.push(detailsHotel);
+    localStorage.setItem("reservations", JSON.stringify(reservations));
+  }
 }

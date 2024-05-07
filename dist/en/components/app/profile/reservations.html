@@ -1,5 +1,38 @@
 
-<div class="lg:container mx-auto mt-16 w-full">
+<div class="relative lg:container mx-auto mt-16 w-full mb-20">
   <h1 class="text-[#EDC531] text-3xl">My Reservations</h1>
-  <div class="flex flex-col gap-3 w-full mt-12 px-2 lg:px-0 py-5" id="reservations"></div>
+  <div class="flex flex-row-reverse gap-2 w-full mt-12">
+    <div class="flex flex-col gap-3 md:w-1/2 outline-zinc-900" id="reservations"></div>
+    <div class="w-1/2 text-white outline outline-1 outline-zinc-900 rounded-sm" id="details-cont">
+      <div class="outline outline-1 outline-gray-800 w-full overflow-hidden rounded-[4px]" id="details"><img class="h-96 w-full object-fit-cover object-cover" loading="lazy" src="https://firebasestorage.googleapis.com/v0/b/hwaidak-hotels-staging.appspot.com/o/Titanic%20Royal%2FPremium%20-%20Family-Standard%20Room%2FPremium%20-%20Family%3AStandard-1.jpeg?alt=media&amp;token=3799f666-c5f8-47d8-8f18-871c95d7b5b0" alt="Room"/>
+        <div class="px-2">
+          <h1 class="text-3xl mt-5">Premium - Family / Standard</h1>
+          <h1 class="text-3xl mt-5">Premium - Family / Standard</h1>
+          <div class="flex gap-1 mt-1 text-xl">
+            <h1 class="line-through text-zinc-400">200$</h1>
+            <h1 class="text-zinc-200">159$ For Night</h1>
+          </div>
+          <h1 class="text-zinc-200">Rate: 4.5</h1>
+        </div>
+        <button class="w-full bg-yellow-700 h-12 mt-10 text-zinc-900 text-lg transition-all hover:text-white" id="checkIn">Check In</button>
+      </div>
+      <div class="w-full bg-slate-800 h-full" id="check-cont">
+        <form class="flex flex-col gap-6 items-center p-10" id="check_form" onsubmit="send()">
+          <div class="flex flex-col gap-2 w-full">
+            <label class="text-s capitalize text-[17px]" for="visa_card">Visa Card</label>
+            <input class="w-full outline outline-1 outline-[#EDC531] bg-zinc-800 py-1 px-2" id="visa_card" name="visa_card" type="number" required="required"/>
+          </div>
+          <div class="flex flex-col gap-2 w-full">
+            <label class="text-s capitalize text-[17px]" for="individuals">Number of Individuals</label>
+            <input class="w-full outline outline-1 outline-[#EDC531] bg-zinc-800 py-1 px-2" id="individuals" name="individuals" type="number" required="required"/>
+          </div>
+          <div class="flex flex-col gap-2 w-full">
+            <label class="text-s capitalize text-[17px]" for="phone">Phone Number</label>
+            <input class="w-full outline outline-1 outline-[#EDC531] bg-zinc-800 py-1 px-2" id="phone" name="phone" type="number" required="required"/>
+          </div>
+          <button class="w-full h-10 bg-[#dbb42c] text-zinc-800 text-lg" id="CheckOut">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

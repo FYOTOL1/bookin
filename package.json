@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.23",
+    "pug": "^3.0.2",
+    "swiper": "^11.1.1"
+  },
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/en/style/main.css -o ./dist/en/style/output.css --watch",
+    "pug": "pug ./src/en -o ./dist/en -w -P",
+    "server": "npx json-server ./src/en/db/db.json"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

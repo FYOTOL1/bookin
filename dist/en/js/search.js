@@ -8,8 +8,63 @@ let filter = [];
 let detailsHotel = {};
 
 async function GetHotels() {
-  const res = await fetch("http://localhost:3000/hotels");
-  data = await res.json();
+  data = {
+    hotels: [
+      {
+        id: 1,
+        hotel_name: "F1",
+        description: "Good Hotel",
+        last_price: 123,
+        price: 20,
+        for: "Night",
+        quantity: 2,
+        type: "room",
+        rate: 4.5,
+        location: "12/133-423/street",
+        img: "https://i.pinimg.com/564x/e6/4c/2c/e64c2ce60bc30ce4d9854f69b6cc40c8.jpg",
+      },
+      {
+        id: 2,
+        hotel_name: "F2",
+        description: "Good Room",
+        last_price: 1223,
+        price: 50,
+        for: "Night",
+        quantity: 2,
+        type: "room",
+        rate: 1,
+        location: "12/133-423/street",
+        img: "https://i.pinimg.com/564x/8e/06/a6/8e06a606d7d0bf04ea8e3b22e773b505.jpg",
+      },
+      {
+        id: 3,
+        hotel_name: "F3",
+        description: "Perfect Hotel",
+        last_price: 123,
+        price: 20,
+        for: "Night",
+        quantity: 2,
+        type: "room",
+        rate: 2.5,
+        location: "12/133-423/street",
+        img: "https://i.pinimg.com/736x/67/2d/e4/672de4b6675d01a81309b0ec827536ff.jpg",
+      },
+      {
+        id: 4,
+        hotel_name: "F4",
+        description: "Good Room",
+        last_price: 123,
+        price: 20,
+        for: "Night",
+        quantity: 2,
+        type: "room",
+        rate: 4,
+        location: "12/133-423/street",
+        img: "https://i.pinimg.com/564x/92/58/84/9258843b72f5b8e729724709f30dc3bf.jpg",
+      },
+    ],
+  };
+
   RenderHotels();
 }
 

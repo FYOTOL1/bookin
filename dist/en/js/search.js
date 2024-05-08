@@ -7,8 +7,8 @@ let data = [];
 let filter = [];
 let detailsHotel = {};
 
-async function GetHotels() {
-  (data = [
+function GetHotels() {
+  data = [
     {
       id: 1,
       hotel_name: "F1",
@@ -61,8 +61,9 @@ async function GetHotels() {
       location: "12/133-423/street",
       img: "https://i.pinimg.com/564x/92/58/84/9258843b72f5b8e729724709f30dc3bf.jpg",
     },
-  ]),
-    RenderHotels();
+  ];
+  console.log(data);
+  RenderHotels();
 }
 
 async function GetHotel(name, type, price, rate) {
